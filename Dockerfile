@@ -8,3 +8,5 @@ RUN true \
   && ln -sf /usr/share/zoneinfo/PRC /etc/localtime
 
 RUN apt-get update && apt-get install -y git curl
+RUN sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+CMD eval "$(starship init bash)"
